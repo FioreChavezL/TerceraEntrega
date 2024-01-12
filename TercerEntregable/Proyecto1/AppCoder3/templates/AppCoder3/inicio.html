@@ -1,0 +1,33 @@
+{% extends "AppCoder3/padre.html" %}
+
+
+{% load static %}
+
+
+{% block titulo %}
+
+Bienvenidos a Detalles.com
+
+{% endblock %}
+
+{% block descripcion %}
+
+<p>Busca tu tienda aquí:</p>
+<form action="/AppCoder3/resultadostienda/" method="GET">
+
+    <input type="text" name="empresa" id="empresa">
+
+    <input type="submit" name="Buscar">
+
+
+</form>
+
+<p>La empresa {{empresa}} tiene las siguientes tiendas:</p>
+
+{% for tienda in tienda %}
+
+    <p> - Tienda: {{tienda.tienda}} </p>
+
+{% endfor %}
+
+{% endblock %}
